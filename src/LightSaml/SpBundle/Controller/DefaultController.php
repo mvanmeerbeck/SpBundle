@@ -50,7 +50,7 @@ class DefaultController extends Controller
 
         $idpEntityId = $request->get('idp');
         if (null === $idpEntityId) {
-            return $this->redirectToRoute($this->getParameter('lightsaml_sp.route.discovery'));
+            return $this->redirectToRoute($this->container->getParameter('lightsaml_sp.route.discovery'));
         }
 
         $profile = $this->get('ligthsaml.profile.login_factory')->get($idpEntityId);
